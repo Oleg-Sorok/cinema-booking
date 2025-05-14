@@ -1,37 +1,41 @@
 const CinemaHall = ({ selected, setSelected, bookedSeats }) => {
   const totalSeats = 50;
 
-  const toggleSeat = seat => {
+  const toggleSeat = (seat) => {
     if (bookedSeats.includes(seat)) return;
 
     if (selected.includes(seat)) {
-      setSelected(selected.filter(s => s !== seat));
+      setSelected(selected.filter((s) => s !== seat));
     } else {
       setSelected([...selected, seat]);
     }
   };
 
   return (
-    <div className="grid grid-cols-10 gap-2 p-4">
-      {[...Array(totalSeats)].map((_, i) => {
-        const seat = i + 1;
-        let className = "w-8 h-8 rounded cursor-pointer text-center leading-8 ";
+    <>
+      <h2 className="text-xl font-semibold text-center mt-4">Зал кінотеатру</h2>
 
-        if (bookedSeats.includes(seat)) className += "bg-red-500 text-white";
-        else if (selected.includes(seat)) className += "bg-blue-500 text-white";
-        else className += "bg-green-300";
+      <div className="hall">
+        {[...Array(totalSeats)].map((_, i) => {
+          const seat = i + 1;
+          let seatClass = "seat";
 
-        return (
-          <div
-            key={seat}
-            className={className}
-            onClick={() => toggleSeat(seat)}
-          >
-            {seat}
-          </div>
-        );
-      })}
-    </div>
+          if (bookedSeats.includes(seat)) seatClass += " booked";
+          else if (selected.includes(seat)) seatClass += " selected";
+          else seatClass += " available";
+
+          return (
+            <div
+              key={seat}
+              className={seatClass}
+              onClick={() => toggleSeat(seat)}
+            >
+              {seat}
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
