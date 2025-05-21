@@ -56,7 +56,7 @@ function CinemaHall({ onSeatsChange, bookedSeats = [] }) {
       <h2>Вибір місць</h2>
       <div className="seats-grid">{renderSeats()}</div>
       <div className="selected-seats">
-        <h3>Вибрані місця:</h3>
+        <h3>Ваші вибрані місця:</h3>
         {selectedSeats.length > 0 ? (
           <ul>
             {selectedSeats.map(seat => (
