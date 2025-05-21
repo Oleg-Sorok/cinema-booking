@@ -1,0 +1,238 @@
+.cinema-hall {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .cinema-hall h2 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin: 0;
+  }
+  
+  .seats-grid {
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .seat-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #34495e;
+    justify-content: center;
+  }
+  
+  .seat {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .seat.available {
+    background-color: #34c759; /* Зелений для вільних */
+  }
+  
+  .seat.selected {
+    background-color: #3498db; /* Синій для вибраних */
+  }
+  
+  .seat.booked {
+    background-color: #e74c3c; /* Червоний для заброньованих */
+    cursor: not-allowed;
+  }
+  
+  .seat.available:hover {
+    opacity: 0.8;
+  }
+  
+  .seat.selected:hover {
+    opacity: 0.8;
+  }
+  
+  .selected-seats {
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+  }
+  
+  .selected-seats h3 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .selected-seats ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .selected-seats li {
+    font-size: 14px;
+    color: #34495e;
+    margin-bottom: 5px;
+  }
+  
+  .booking h2 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .screen {
+    width: 100%;
+    max-width: 800px;
+    height: 40px;
+    background-color: #222;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .booking-form {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+    color: #2c3e50;
+    font-weight: 500;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid #dfe6e9;
+    border-radius: 8px;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+  }
+  
+  .input-error {
+    border-color: #e74c3c !important;
+  }
+  
+  .error {
+    color: #e74c3c;
+    font-size: 12px;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(135deg, #032ad6, #00294a);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    .cinema-hall h2 {
+      font-size: 1.5rem;
+    }
+  
+    .seats-grid,
+    .selected-seats,
+    .screen,
+    .booking-form {
+      max-width: 600px;
+    }
+  
+    .seat {
+      width: 35px;
+      height: 35px;
+      font-size: 12px;
+    }
+  
+    .booking h2 {
+      font-size: 1.8rem;
+    }
+  
+    .screen {
+      height: 50px;
+      font-size: 14px;
+    }
+  
+    .form-group input {
+      font-size: 12px;
+    }
+  
+    .submit-button {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .seats-grid,
+    .selected-seats,
+    .screen,
+    .booking-form {
+      max-width: 400px;
+    }
+  
+    .seat {
+      width: 30px;
+      height: 30px;
+      font-size: 10px;
+    }
+  
+    .booking h2 {
+      font-size: 1.5rem;
+    }
+  
+    .screen {
+      height: 40px;
+      font-size: 12px;
+    }
+  
+    .form-group input {
+      font-size: 12px;
+    }
+  
+    .submit-button {
+      font-size: 14px;
+    }
+  }
